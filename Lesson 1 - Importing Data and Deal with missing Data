@@ -1,0 +1,39 @@
+Machine Learning-
+Day 1
+
+Importing Library-
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# To open a csv file in jupyter notebook
+
+dataset=pd.read_csv("file path")
+
+# To extract some specific rows and coloums from it
+ 
+x=dataset.iloc[r1:r2,c1:c2]
+
+# Here r1,r2 are starting and ending index for the number
+  of rows we want to extract.
+  Same for c1,c2 for coloums.
+
+# To show values of these specific rows and coloums
+dataset.iloc[r1:r2,c1:c2].values	
+
+# To fill the missing/nan values
+from sklearn.preprocessing import Imputer
+imputer=Imputer(missing_values="NaN",strategy="mean/median/most_frequent",axis=0/1)
+imputer=imputer.fit(x[])
+x[]=imputer.transform(x[])
+x
+
+// Important points in above code
+1. Imputer contains mainly 3 argument
+   i) missing_values
+   ii) strategy --> mean,median,most_frequent
+   iii) axis --> 0 for all coloums and 1 for all rows
+2. missing_values must contain "NaN" N in capital
+3. Then we have to fit it and then transform it.
